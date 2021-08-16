@@ -52,7 +52,8 @@ export class ExamsheetEditComponent implements OnInit {
         key: 'name', label: 'Name', type: 'text', value: this.examsheet.name,
         validators: [Validators.required, Validators.minLength(5), Validators.pattern(/^[A-Ű]{1}.*$/)], errorMessage: 'Name is required.'
       }),
-      // new TextareaField({ key: 'questions', label: 'Questions.', value: this.examsheet.questions }),
+      new InputField({ key: 'category', label: 'Category', type: 'number', value: (this.examsheet.category as unknown as string) }),
+      new TextareaField({ key: 'questions', label: 'Questions.', type: 'number', value: (this.examsheet.questions as unknown as string) }),
       // new InputField({ key: 'price', label: 'Price', type: 'number', value: (this.examsheet.price as unknown as string) }),
     ];
   }

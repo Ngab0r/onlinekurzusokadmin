@@ -1,0 +1,22 @@
+<div class="row">
+  <div class="col-6 offset-3">
+    <form #questionForm="ngForm" (ngSubmit)="onSave(questionForm)">
+      <div class="form-group">
+        <label for="">Name</label>
+        <input class="form-control" type="text" name="name" [(ngModel)]="question.name">
+      </div>
+      <div class="form-group">
+        <label for="">Answer</label>
+        <input class="form-control" type="number" name="answer" [(ngModel)]="question.answer">
+      </div>
+      <div class="form-group">
+        <label for="">Correct answer</label>
+        <input class="form-control" type="number" name="correctAnswer" [(ngModel)]="question.correctAnswer">
+      </div>
+
+      <button type="submit" [disabled]="questionForm.invalid" class="btn btn-primary w-100 mt-3 mb-3">
+        Create a new Question
+      </button>
+    </form>
+  </div>
+</div>

@@ -10,6 +10,12 @@ import { UsersComponent } from './page/users/users.component';
 import { PaymentsComponent } from './page/payments/payments.component';
 import { AttachmentComponent } from './page/attachment/attachment.component';
 import { HelpComponent } from './page/help/help.component';
+import { ExamsheetEditComponent } from './page/examsheet-edit/examsheet-edit.component';
+import { UserEditComponent } from './page/user-edit/user-edit.component';
+import { UserCreateComponent } from './page/user-create/user-create.component';
+import { QuestionCreateComponent } from './page/question-create/question-create.component';
+import { PaymentEditComponent } from './page/payment-edit/payment-edit.component';
+import { AttachmentEditComponent } from './page/attachment-edit/attachment-edit.component';
 
 const routes: Routes = [
   {
@@ -21,8 +27,20 @@ const routes: Routes = [
     component: UsersComponent,
   },
   {
+    path: 'users/create',
+    component: UserCreateComponent,
+  },
+  {
+    path: 'users/edit/:id',
+    component: UserEditComponent,
+  },
+  {
     path: 'questions',
     component: QuestionsComponent,
+  },
+  {
+    path: 'question/create',
+    component: QuestionCreateComponent,
   },
   {
     path: 'questions/edit/:id',
@@ -33,8 +51,16 @@ const routes: Routes = [
     component: AttachmentComponent,
   },
   {
+    path: 'attachment/edit/:id',
+    component: AttachmentEditComponent,
+  },
+  {
     path: 'examsheet/create',
     component: ExamsheetCreateComponent,
+  },
+  {
+    path: 'examsheet/edit/:id',
+    component: ExamsheetEditComponent,
   },
   {
     path: 'examsheets',
@@ -43,6 +69,10 @@ const routes: Routes = [
   {
     path: 'payments',
     component: PaymentsComponent,
+  },
+  {
+    path: 'payment/edit/:id',
+    component: PaymentEditComponent,
   },
   {
     path: 'help',

@@ -1,15 +1,40 @@
 <div class="container-fluid px-4">
-  <h1 class="mt-4">Sidenav Light</h1>
-  <ol class="breadcrumb mb-4">
-    <li class="breadcrumb-item"><a href="index.html">Dashboard</a></li>
-    <li class="breadcrumb-item active">Sidenav Light</li>
-  </ol>
-  <div class="card mb-4">
-    <div class="card-body"> This page is an example of using the light
-      side navigation option. By appending the
-      <code>.sb-sidenav-light</code> class to the
-      <code>.sb-sidenav</code> class, the side navigation will take on a
-      light color scheme. The <code>.sb-sidenav-dark</code> is also
-      available for a darker option. </div>
+  <h1 class="mt-4">Online Admin Dashboard</h1>
+
+  <div class="container mt-5">
+    <div class="row">
+      <div class="card col-sm-12 col-lg-6">
+        <div class="card-body">
+          <h5 class="card-title">Users</h5>
+          <h6 class="card-subtitle mb-2 text-muted">Number of users</h6>
+          <p class="card-text">{{ userNumber }}</p>
+          <a routerLink="/users" class="card-link">Link to list</a>
+        </div>
+      </div>
+      <div class="card col-sm-12 col-lg-6">
+        <div class="card-body">
+          <h5 class="card-title">Examsheets</h5>
+          <h6 class="card-subtitle mb-2 text-muted">Number of exams</h6>
+          <p class="card-text">{{ examsheetNumber}}</p>
+          <a routerLink="/examsheets" class="card-link">Link to list</a>
+        </div>
+      </div>
+      <div class="card col-sm-12 col-lg-6">
+        <div class="card-body">
+          <h5 class="card-title">Questions</h5>
+          <h6 class="card-subtitle mb-2 text-muted">Number of questions</h6>
+          <p class="card-text">{{ questionNumber }}</p>
+          <a routerLink="/questions" class="card-link">Link to list</a>
+        </div>
+      </div>
+      <div class="card col-sm-12 col-lg-6">
+        <div class="card-body">
+          <h5 class="card-title">Attachments</h5>
+          <h6 class="card-subtitle mb-2 text-muted">Number of attachments</h6>
+          <p class="card-text">{{ attachmentNumber }}</p>
+          <a routerLink="/attachments" class="card-link">Link to list</a>
+        </div>
+      </div>
+    </div>
   </div>
 </div>

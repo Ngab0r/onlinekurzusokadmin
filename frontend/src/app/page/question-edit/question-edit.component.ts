@@ -53,7 +53,8 @@ export class QuestionEditComponent implements OnInit {
         validators: [Validators.required, Validators.minLength(5), Validators.pattern(/^[A-Ű]{1}.*$/)], errorMessage: 'Name is required.'
       }),
       new TextareaField({ key: 'answer', label: 'Answer.', value: this.question.answer }),
-      // new InputField({ key: 'price', label: 'Price', type: 'number', value: (this.question.price as unknown as string) }),
+      new InputField({ key: 'correctAnswer', label: 'Correct Answer', type: 'number', value: (this.question.correctAnswer as unknown as string) }),
+      new InputField({ key: 'type', label: 'Type', type: 'number', value: (this.question.type as unknown as string) }),
     ];
   }
 

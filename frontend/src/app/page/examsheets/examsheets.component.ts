@@ -26,6 +26,6 @@ export class ExamsheetsComponent implements OnInit {
   }
 
   onSelectOne(examsheet: Examsheet): void {
-    this.router.navigate(['/', 'examsheets', 'edit', examsheet._id]);
+    this.router.navigate(['/', 'examsheet', 'edit', examsheet._id]);
   }
 }

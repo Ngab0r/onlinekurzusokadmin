@@ -1,37 +1,5 @@
-<div class="row">
-  <div class="col-12 d-grid mt-3 mb-3">
-    <button routerLink="/attachments/create" class="btn btn-success w-100">
-      New Attachment
-    </button>
-  </div>
-</div>
-
-<div class="row">
-  <div class="col-12">
-    <table class="table">
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th>Url</th>
-          <th>User</th>
-          <th>Thumbnail </th>
-          <th></th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let attachment of list$ | async">
-          <td>{{ attachment.name }}</td>
-          <td>{{ attachment.url }}</td>
-          <td>{{ attachment.user.firstName }}</td>
-          <td>
-            <div class="btn-group">
-              <button class="btn btn-info">
-                <i class="fas fa-pencil-alt"></i>
-              </button>
-            </div>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
+<div class="container-fluid px-4">
+  <h1 class="mt-4">Attachments</h1>
+  <app-data-table [tableColumns]="tableColumns" [list$]="list$" (selectOne)="onSelectOne($event)">
+  </app-data-table>
 </div>

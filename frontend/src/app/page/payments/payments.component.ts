@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { Payment } from 'src/app/model/payment';
 import { ITableColumn, ConfigService } from 'src/app/service/config.service';
@@ -17,9 +18,13 @@ export class PaymentsComponent implements OnInit {
   constructor(
     private config: ConfigService,
     private paymentService: PaymentService,
+    private router: Router,
   ) { }
 
   ngOnInit(): void {
   }
 
+  onSelectOne(payment: Payment): void {
+    this.router.navigate(['/', 'payment', 'edit', payment._id]);
+  }
 }
