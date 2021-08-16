@@ -1,52 +1,73 @@
 {
   "users": [
     {
-      "_id": "fasfdasfasdffff541515",
-      "firstName": "Joe",
-      "lastName": "Firpo",
-      "email": "jf@gmail.com",
-      "address": {
-        "country": "USA",
-        "state": "CA",
-        "city": "LA",
-        "street": "Sunset Avenue 33."
-      },
-      "active": true,
-      "password": "$2a$10$gM4bsxl5NDA6O3X330UmDOWZWCixRWFR36gNg5yLXf5c6cO0FGq9e"
+      "_id": "61196e641a6a87001237e5ba",
+      "role": "admin",
+      "email": "admin@gmail.com",
+      "password": "$2a$10$dE9rlEMTdjHf.dyfwZmVWOx2huQ3mOygDt7nMcnvktRqxVeceyyOi",
+      "firstName": "admin",
+      "lastName": "admin"
+    },
+    {
+      "_id": "61196e641a6a87001237e5bb",
+      "role": "user",
+      "email": "user@gmail.com",
+      "password": "$2a$10$JpE7JHN/mwk1WVhmhxjtyecndyA7JHDtnhtqgcoPJc2W6PxQh6JyS"
+    },
+    {
+      "_id": "611ac91a0f94f3001344ad94",
+      "role": "user",
+      "firstName": "teszt",
+      "lastName": "tesztlast",
+      "email": "teszt@teszt.hu",
+      "password": "$2a$10$N3aCBeB3EeSxeDmQaRrHLuvaG.m/iNyg14eEvkjwrV5NRuavR51pW"
     }
   ],
-  "products": [
+  "questions": [
     {
-      "_id": "fasfdasfasdffff541515",
-      "name": "Joe",
-      "description": "Firpo",
-      "price": 10012458854,
-      "active": false
-    },
-    {
-      "_id": "fasfdasfasdffff541516",
-      "name": "Jack",
-      "description": "Firpo",
-      "price": 3232323,
-      "active": true
-    },
-    {
-      "_id": "fasfdasfasdffff541517",
-      "name": "Jill",
-      "description": "Firpo",
-      "price": 5614561546,
+      "_id": "611a56102cf414a377b44810",
+      "name": "Melyik állítás igaz a NoSQL adatbázisokra?<br><br>Válaszd ki az EGYETLEN megfelelő választ!",
+      "answer": "1. Drága az üzemeltetése, 2. Összetett lekérdezések időigényesek, 3. Cak egy, választható típusú adatmodellt használhatunk, 4. Egy dokumentumhoz bármikor hozzáadhatok új tulajdonságot, függetlenül a többitől",
+      "correctAnswer": [4],
+      "type": 0,
+      "attachment": 0,
       "active": true
     }
   ],
-  "orders": [
+  "payments": [
     {
-      "_id": "fasfdasfasdffff541515",
-      "userId": "fasfdasfasdffff541515",
-      "products": [
-        "fasfdasfasdffff541515"
-      ],
-      "time": 1626699947303,
-      "note": "I am old, please ring for a long time."
+      "_id": "611a609a2cf414a377b44834",
+      "user": "61196e641a6a87001237e5ba",
+      "money": 12000
+    },
+    {
+      "_id": "611ab15fd95b296eeafdeb5c",
+      "user": "61196e641a6a87001237e5bb",
+      "money": 15000
+    }
+  ],
+  "examsheets": [
+    {
+      "_id": "611a57e72cf414a377b44813",
+      "name": "info",
+      "category": 0,
+      "user": "61196e641a6a87001237e5ba",
+      "questions": ["611a56102cf414a377b44810"]
+    },
+    {
+      "_id": "611a5af92cf414a377b4481e",
+      "name": "info 2",
+      "category": 0,
+      "user": "61196e641a6a87001237e5bb",
+      "questions": ["611a56102cf414a377b44810"]
+    }
+  ],
+  "attachments": [
+    {
+      "_id": "611a5f472cf414a377b4482d",
+      "name": "onePicture",
+      "url": "../public/picture",
+      "user": "61196e641a6a87001237e5ba"
     }
   ]
 }
