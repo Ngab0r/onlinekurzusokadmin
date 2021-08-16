@@ -1,62 +1,50 @@
 const { mockRequest, mockResponse } = require('jest-mock-req-res');
 const createError = require('http-errors');
 
-const personController = require('./person.controller');
-const personService = require('./person.service');
+const examsheetController = require('./examsheet.controller');
+const examsheetService = require('./examsheet.service');
 
-jest.mock('./person.service');
+jest.mock('./examsheet.service');
 
-describe("person controler", () => {
+describe("examsheet controler", () => {
     const mockData = [{
         "id": 1,
-        "first_name": "Fiorenze",
-        "last_name": "Dyneley",
-        "email": "fdyneley0@narod.ru"
-    }, {
-        "id": 2,
-        "first_name": "Owen",
-        "last_name": "Jirka",
-        "email": "ojirka1@squidoo.com"
-    }, {
-        "id": 3,
-        "first_name": "Terra",
-        "last_name": "Hurdman",
-        "email": "thurdman2@reverbnation.com"
-    }, {
-        "id": 4,
-        "first_name": "Thomasin",
-        "last_name": "de Keep",
-        "email": "tdekeep3@fc2.com"
-    }, {
-        "id": 5,
-        "first_name": "Lawrence",
-        "last_name": "Tearle",
-        "email": "ltearle4@infoseek.co.jp"
+        "name": "info",
+        "category": 0,
+        "user": 1,
+        "questions": 1,
+    },
+    {
+        "id": 1,
+        "name": "info 2",
+        "category": 0,
+        "user": 2,
+        "questions": 2,
     }];
 
     let response;
     const nextFunction = jest.fn();
 
     beforeEach(() => {
-        personService.__setMockData(mockData);
+        examsheetService.__setMockData(mockData);
         response = mockResponse();
     });
 
     test("find one with valid id", () => {
-        const PERSON_ID = 1;
+        const EXAMSHEET_ID = 1;
 
         const request = mockRequest({
             params: {
-                id: PERSON_ID
+                id: EXAMSHEET_ID
             }
         });
 
-        return personController.findOne(request, response, nextFunction)
-            .then( () => {
-                expect(personService.findOne).toBeCalledWith(PERSON_ID);
+        return examsheetController.findOne(request, response, nextFunction)
+            .then(() => {
+                expect(examsheetService.findOne).toBeCalledWith(EXAMSHEET_ID);
                 expect(response.json).toBeCalledWith(
-                    mockData.find(p => p.id === PERSON_ID)
-                );                
+                    mockData.find(p => p.id === EXAMSHEET_ID)
+                );
             })
     });
 });

@@ -43,17 +43,17 @@ describe("attachment controler", () => {
     });
 
     test("find one with valid id", () => {
-        const PERSON_ID = 1;
+        const USER_ID = 1;
 
         const request = mockRequest({
             params: {
-                id: PERSON_ID
+                id: USER_ID
             }
         });
 
         return attachmentController.findOne(request, response, nextFunction)
             .then(() => {
-                expect(attachmentService.findOne).toBeCalledWith(PERSON_ID);
+                expect(attachmentService.findOne).toBeCalledWith(USER_ID);
                 expect(response.json).toBeCalledWith(
                     mockData.find(p => p.id === ATTACHMENT_ID)
                 );

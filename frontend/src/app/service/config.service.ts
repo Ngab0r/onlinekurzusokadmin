@@ -91,6 +91,7 @@ export class ConfigService {
 
   // row.customer.name => (row, 'customer.name')
   static getSubProperty(obj: any, ...keys: string[]): string | number | boolean | undefined {
+    console.log(obj);
     return keys.map(key => get(obj, key)).join(' ');
   }
 

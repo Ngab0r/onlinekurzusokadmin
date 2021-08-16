@@ -26,10 +26,10 @@ exports.create = (req, res, next) => {
     if (!checkModel(examsheetModel, req.body, next)) {
         return;
     }
-    const { user, questions, note } = req.body;
+    const { name, user, questions } = req.body;
 
     const newExamsheet = {
-        user, questions: questions || [], note: note || ''
+        user, questions: questions || []
     };
 
     return examsheetService.create(newExamsheet)

@@ -5,17 +5,15 @@ const questionService = require('./question.service');
 
 // Create a new question.
 exports.create = (req, res, next) => {
-    const { last_name, first_name, email } = req.body;
-    if (!last_name || !first_name || !email) {
+    const { name, answer, correctAnswer, type } = req.body;
+    if (!name || !answer || !correctAnswer || !type) {
         return next(
             new createError.BadRequest("Missing properties!")
         );
     }
 
     const newQuestion = {
-        firstName: first_name,
-        lastName: last_name,
-        email: email
+        name, answer, correctAnswer, type
     };
 
     return questionService.create(newQuestion)
@@ -28,8 +26,8 @@ exports.create = (req, res, next) => {
 
 exports.findAll = (req, res, next) => {
     return questionService.findAll()
-        .then(people => {
-            res.json(people);
+        .then(question => {
+            res.json(question);
         });
 };
 
@@ -45,17 +43,15 @@ exports.findOne = (req, res, next) => {
 
 exports.update = (req, res, next) => {
     const id = req.params.id;
-    const { first_name, last_name, email } = req.body;
-    if (!last_name || !first_name || !email) {
+    const { first_name, name, email } = req.body;
+    if (!name || answer || !correctAnswer || !type) {
         return next(
             new createError.BadRequest("Missing properties!")
         );
     }
 
     const update = {
-        firstName: first_name,
-        lastName: last_name,
-        email: email
+        name, answer, correctAnswer, type
     };
     return questionService.update(req.params.id, update)
         .then(question => {

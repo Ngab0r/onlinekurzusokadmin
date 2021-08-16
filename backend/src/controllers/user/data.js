@@ -1,26 +1,20 @@
-module.exports = [{
-    "id": 1,
-    "first_name": "Fiorenze",
-    "last_name": "Dyneley",
-    "email": "fdyneley0@narod.ru"
-}, {
-    "id": 2,
-    "first_name": "Owen",
-    "last_name": "Jirka",
-    "email": "ojirka1@squidoo.com"
-}, {
-    "id": 3,
-    "first_name": "Terra",
-    "last_name": "Hurdman",
-    "email": "thurdman2@reverbnation.com"
-}, {
-    "id": 4,
-    "first_name": "Thomasin",
-    "last_name": "de Keep",
-    "email": "tdekeep3@fc2.com"
-}, {
-    "id": 5,
-    "first_name": "Lawrence",
-    "last_name": "Tearle",
-    "email": "ltearle4@infoseek.co.jp"
-}];
+module.exports = [
+    {
+        "id": 1,
+        "role": "admin",
+        "email": "admin@gmail.com",
+        "password": "$2a$10$dE9rlEMTdjHf.dyfwZmVWOx2huQ3mOygDt7nMcnvktRqxVeceyyOi",
+        "createdAt": new Date('2021-08-15'),
+        "updatedAt": new Date('2021-08-15'),
+        "firstName": "admin",
+        "lastName": "admin"
+    },
+    {
+        "id": 1,
+        "role": "user",
+        "email": "user@gmail.com",
+        "password": "$2a$10$JpE7JHN/mwk1WVhmhxjtyecndyA7JHDtnhtqgcoPJc2W6PxQh6JyS",
+        "createdAt": new Date('2021-08-15'),
+        "updatedAt": new Date('2021-08-15')
+    }
+];
