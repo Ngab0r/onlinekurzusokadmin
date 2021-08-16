@@ -1,0 +1,52 @@
+{
+  "users": [
+    {
+      "_id": "fasfdasfasdffff541515",
+      "firstName": "Joe",
+      "lastName": "Firpo",
+      "email": "jf@gmail.com",
+      "address": {
+        "country": "USA",
+        "state": "CA",
+        "city": "LA",
+        "street": "Sunset Avenue 33."
+      },
+      "active": true,
+      "password": "$2a$10$gM4bsxl5NDA6O3X330UmDOWZWCixRWFR36gNg5yLXf5c6cO0FGq9e"
+    }
+  ],
+  "products": [
+    {
+      "_id": "fasfdasfasdffff541515",
+      "name": "Joe",
+      "description": "Firpo",
+      "price": 10012458854,
+      "active": false
+    },
+    {
+      "_id": "fasfdasfasdffff541516",
+      "name": "Jack",
+      "description": "Firpo",
+      "price": 3232323,
+      "active": true
+    },
+    {
+      "_id": "fasfdasfasdffff541517",
+      "name": "Jill",
+      "description": "Firpo",
+      "price": 5614561546,
+      "active": true
+    }
+  ],
+  "orders": [
+    {
+      "_id": "fasfdasfasdffff541515",
+      "userId": "fasfdasfasdffff541515",
+      "products": [
+        "fasfdasfasdffff541515"
+      ],
+      "time": 1626699947303,
+      "note": "I am old, please ring for a long time."
+    }
+  ]
+}

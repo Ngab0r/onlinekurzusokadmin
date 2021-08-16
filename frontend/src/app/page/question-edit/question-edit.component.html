@@ -1,0 +1,13 @@
+<h3>Edit Question</h3>
+<div class="row">
+  <div class="col-12 d-grid mt-3 mb-3">
+    <button routerLink="/attachments/create" class="btn btn-success w-100">
+      New Question
+    </button>
+  </div>
+</div>
+<div class="row">
+  <div class="col-6 offset-3">
+    <app-areus-form *ngIf="showForm" [fieldList]="fields" (submitted)="onSave($event)"></app-areus-form>
+  </div>
+</div>
