@@ -1,5 +1,4 @@
 const mongoose = require('mongoose');
-const idValidator = require('mongoose-id-validator');
 
 const PaymentSchema = mongoose.Schema({
     user: {
@@ -19,6 +18,5 @@ const PaymentSchema = mongoose.Schema({
     timestamps: true
 });
 
-PaymentSchema.plugin(idValidator);
 
 module.exports = mongoose.model('Payment', PaymentSchema);

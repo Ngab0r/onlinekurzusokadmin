@@ -32,13 +32,3 @@ const QuestionSchema = mongoose.Schema({
 });
 
 module.exports = mongoose.model('Question', QuestionSchema);
-
-/*
-export class Question {
-  _id: string = '';
-  name: string = '';
-  description: string = '';
-  price: number = 0;
-  active: boolean = true;
-}
-*/
