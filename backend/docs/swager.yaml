@@ -6,28 +6,28 @@ info:
 servers:
   - url: http://localhost:3000
 paths:
-  /person:
+  /attachment:
     get:
-      description: Returns a list of persons
+      description: Returns a list of attachments
       security:
         - bearerAuth: []
       responses:
-        '200':
-          description: List of persons returned successfully
+        "200":
+          description: List of attachments returned successfully
           content:
             application/json:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/Person'
-        '500':
+                  $ref: "#/components/schemas/Attachment"
+        "500":
           description: Internal server error
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Error'
+                $ref: "#/components/schemas/Error"
     post:
-      description: Creates a new person
+      description: Creates a new attachment
       security:
         - bearerAuth: []
       requestBody:
@@ -35,58 +35,58 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/Person'
+              $ref: "#/components/schemas/Attachment"
       responses:
-        '201':
-          description: Person has been created successfully
+        "201":
+          description: Attachment has been created successfully
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Person'
-        '400':
+                $ref: "#/components/schemas/Attachment"
+        "400":
           description: Invalid request
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Error'
-        '500':
+                $ref: "#/components/schemas/Error"
+        "500":
           description: Internal server error
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Error'
-  /person/{person_id}:
+                $ref: "#/components/schemas/Error"
+  /attachment/{attachment_id}:
     get:
-      description: Returns the person with the given ID
+      description: Returns the attachment with the given ID
       security:
         - bearerAuth: []
       parameters:
-        - name: person_id
+        - name: attachment_id
           in: path
           required: true
           schema:
             type: string
       responses:
-        '200':
-          description: Person data returned successfully
+        "200":
+          description: Attachment data returned successfully
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Person'
-        '404':
-          description: Person with the give ID was not found
+                $ref: "#/components/schemas/Attachment"
+        "404":
+          description: Attachment with the give ID was not found
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Error'
-        '500':
+                $ref: "#/components/schemas/Error"
+        "500":
           description: Internal server error
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Error'
+                $ref: "#/components/schemas/Error"
     put:
-      description: Update a person
+      description: Update a attachment
       security:
         - bearerAuth: []
       requestBody:
@@ -94,56 +94,530 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/Person'
+              $ref: "#/components/schemas/Attachment"
       responses:
-        '201':
-          description: Person has been updated successfully
+        "201":
+          description: Attachment has been updated successfully
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Person'
-        '400':
+                $ref: "#/components/schemas/Attachment"
+        "400":
           description: Invalid request
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Error'
-        '500':
+                $ref: "#/components/schemas/Error"
+        "500":
           description: Internal server error
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Error'
-  /cars: 
+                $ref: "#/components/schemas/Error"
+  /examsheet:
     get:
-      description: Returns a list of cars
+      description: Returns a list of examsheets
+      security:
+        - bearerAuth: []
       responses:
-        '200':
-          description: List of cars returned successfully
+        "200":
+          description: List of examsheets returned successfully
           content:
             application/json:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/Car'
-        '500':
+                  $ref: "#/components/schemas/Examsheet"
+        "500":
           description: Internal server error
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Error'
+                $ref: "#/components/schemas/Error"
+    post:
+      description: Creates a new examsheet
+      security:
+        - bearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Examsheet"
+      responses:
+        "201":
+          description: User has been created successfully
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Examsheet"
+        "400":
+          description: Invalid request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+        "500":
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+  /examsheet/{examsheet_id}:
+    get:
+      description: Returns the examsheet with the given ID
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: examsheet_id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Examsheet data returned successfully
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Examsheet"
+        "404":
+          description: Examsheet with the give ID was not found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+        "500":
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+    put:
+      description: Update a examsheet
+      security:
+        - bearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Examsheet"
+      responses:
+        "201":
+          description: Person has been updated successfully
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Examsheet"
+        "400":
+          description: Invalid request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+        "500":
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+  /payment:
+    get:
+      description: Returns a list of payments
+      security:
+        - bearerAuth: []
+      responses:
+        "200":
+          description: List of payments returned successfully
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Payment"
+        "500":
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+    post:
+      description: Creates a new payment
+      security:
+        - bearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Payment"
+      responses:
+        "201":
+          description: Payment has been created successfully
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Payment"
+        "400":
+          description: Invalid request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+        "500":
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+  /payment/{payment_id}:
+    get:
+      description: Returns the payment with the given ID
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: payment_id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Payment data returned successfully
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Payment"
+        "404":
+          description: Payment with the give ID was not found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+        "500":
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+    put:
+      description: Update a payment
+      security:
+        - bearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Payment"
+      responses:
+        "201":
+          description: Payment has been updated successfully
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Payment"
+        "400":
+          description: Invalid request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+        "500":
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+  /question:
+    get:
+      description: Returns a list of questions
+      security:
+        - bearerAuth: []
+      responses:
+        "200":
+          description: List of questions returned successfully
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Question"
+        "500":
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+    post:
+      description: Creates a new question
+      security:
+        - bearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Question"
+      responses:
+        "201":
+          description: Question has been created successfully
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Question"
+        "400":
+          description: Invalid request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+        "500":
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+  /question/{question_id}:
+    get:
+      description: Returns the question with the given ID
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: question_id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Question data returned successfully
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Question"
+        "404":
+          description: Question with the give ID was not found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+        "500":
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+    put:
+      description: Update a question
+      security:
+        - bearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Question"
+      responses:
+        "201":
+          description: Question has been updated successfully
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Question"
+        "400":
+          description: Invalid request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+        "500":
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+  /user:
+    get:
+      description: Returns a list of users
+      security:
+        - bearerAuth: []
+      responses:
+        "200":
+          description: List of users returned successfully
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/User"
+        "500":
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+    post:
+      description: Creates a new user
+      security:
+        - bearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/User"
+      responses:
+        "201":
+          description: User has been created successfully
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/User"
+        "400":
+          description: Invalid request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+        "500":
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+  /user/{user_id}:
+    get:
+      description: Returns the user with the given ID
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: user_id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: User data returned successfully
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/User"
+        "404":
+          description: User with the give ID was not found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+        "500":
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+    put:
+      description: Update a user
+      security:
+        - bearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/User"
+      responses:
+        "201":
+          description: User has been updated successfully
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/User"
+        "400":
+          description: Invalid request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+        "500":
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
 components:
   securitySchemes:
-    bearerAuth:            # arbitrary name for the security scheme
+    bearerAuth: # arbitrary name for the security scheme
       type: http
       scheme: bearer
       bearerFormat: JWT
   schemas:
-    Person:
+    Attachment:
       type: object
       required:
-        - first_name
-        - last_name
+        - name
+        - url
+      properties:
+        name:
+          type: string
+        url:
+          type: string
+        user:
+          type: ObjectId
+          items:
+            $ref: "#/components/schemas/User"
+    Examsheet:
+      type: object
+      required:
+        - name
+        - user
+      properties:
+        name:
+          type: string
+        category:
+          type: number
+        user:
+          type: ObjectId
+          items:
+            $ref: "#/components/schemas/User"
+    Payment:
+      type: object
+      required:
+        - user
+        - money
+      properties:
+        user:
+          type: ObjectId
+          items:
+            $ref: "#/components/schemas/User"
+        money:
+          type: number
+        time:
+          type: Date
+    Question:
+      type: object
+      required:
+        - name
+        - answer
+        - correctAnswer
+        - type
+      properties:
+        name:
+          type: string
+        answer:
+          type: string
+        correctAnswer:
+          type: [Number]
+        type:
+          type: Number
+        attachment:
+          type: ObjectId
+          items:
+            $ref: "#/components/schemas/Attachment"
+    User:
+      type: object
+      required:
         - email
       properties:
         first_name:
@@ -152,36 +626,10 @@ components:
           type: string
         email:
           type: string
-        posts: 
-          type: array
-          items:
-            $ref: '#/components/schemas/Post'
-    Car:
-      type: object
-      required:
-        - model
-        - year
-        - maker
-      properties:
-        model:
+        active:
+          type: boolean
+        role:
           type: string
-        year:
-          type: number
-        maker:
-          type: string
-    Post:
-      type: object
-      required:
-        - title
-        - body
-      properties:
-        title:
-          type: string
-        body:
-          type: string
-        author:
-          type: object
-          $ref: '#/components/schemas/Person'
     Error:
       type: object
       required:

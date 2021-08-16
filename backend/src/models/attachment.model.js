@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 const AttachmentSchema = mongoose.Schema({
     name: { type: String, required: true },
-    url: String,
+    url: { type: String, required: true },
     user: [
         {
             type: mongoose.Schema.Types.ObjectId,
