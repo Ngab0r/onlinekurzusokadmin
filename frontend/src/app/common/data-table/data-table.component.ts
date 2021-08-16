@@ -7,7 +7,7 @@ import { ConfigService, ITableColumn } from 'src/app/service/config.service';
   templateUrl: './data-table.component.html',
   styleUrls: ['./data-table.component.scss']
 })
-export class DataTableComponent<T extends {[propname: string]: any}> implements OnInit {
+export class DataTableComponent<T extends { [propname: string]: any }> implements OnInit {
 
   @Input() tableColumns: ITableColumn[] = [];
   @Input() list$: Observable<T[]> | null = null;

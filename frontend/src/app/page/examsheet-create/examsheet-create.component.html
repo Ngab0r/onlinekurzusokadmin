@@ -1,22 +1,24 @@
-<div class="row">
-  <div class="col-6 offset-3">
-    <form #examsheetForm="ngForm" (ngSubmit)="onSave(examsheetForm)">
-      <div class="form-group">
-        <label for="">Name</label>
-        <input class="form-control" type="text" name="name" [(ngModel)]="examsheet.name">
-      </div>
-      <div class="form-group">
-        <label for="">Category</label>
-        <input class="form-control" type="number" name="category" [(ngModel)]="examsheet.category">
-      </div>
-      <div class="form-group">
-        <label for="">Questions</label>
-        <input class="form-control" type="number" name="questions" [(ngModel)]="examsheet.questions">
-      </div>
+<div class="container mt-4">
+  <div class="row">
+    <div class="col-6 offset-3">
+      <form #examsheetForm="ngForm" (ngSubmit)="onSave(examsheetForm)">
+        <div class="form-group">
+          <label for="">Name</label>
+          <input class="form-control" type="text" name="name" [(ngModel)]="examsheet.name">
+        </div>
+        <div class="form-group">
+          <label for="">Category</label>
+          <input class="form-control" type="number" name="category" [(ngModel)]="examsheet.category">
+        </div>
+        <div class="form-group">
+          <label for="">Questions</label>
+          <input class="form-control" type="number" name="questions" [(ngModel)]="examsheet.questions">
+        </div>
 
-      <button type="submit" [disabled]="examsheetForm.invalid" class="btn btn-primary w-100 mt-3 mb-3">
-        Create a new Examsheet
-      </button>
-    </form>
+        <button type="submit" [disabled]="examsheetForm.invalid" class="btn btn-primary w-100 mt-3 mb-3">
+          Create a new Examsheet
+        </button>
+      </form>
+    </div>
   </div>
 </div>

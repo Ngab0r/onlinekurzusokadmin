@@ -1,26 +1,28 @@
-<div class="row">
-  <div class="col-6 offset-3">
-    <form #userForm="ngForm" (ngSubmit)="onSave(userForm)">
-      <div class="form-group">
-        <label for="">First Name</label>
-        <input class="form-control" type="text" name="name" [(ngModel)]="user.firstName">
-      </div>
-      <div class="form-group">
-        <label for="">Last Name</label>
-        <input class="form-control" type="number" name="category" [(ngModel)]="user.lastName">
-      </div>
-      <div class="form-group">
-        <label for="">Email</label>
-        <input class="form-control" type="number" name="questions" [(ngModel)]="user.email">
-      </div>
-      <div class="form-group">
-        <label for="">Password</label>
-        <input class="form-control" type="number" name="password" [(ngModel)]="user.password">
-      </div>
+<div class="container mt-4">
+  <div class="row">
+    <div class="col-6 offset-3">
+      <form #userForm="ngForm" (ngSubmit)="onSave(userForm)">
+        <div class="form-group">
+          <label for="">First Name</label>
+          <input class="form-control" type="text" name="firstName" [(ngModel)]="user.firstName">
+        </div>
+        <div class="form-group">
+          <label for="">Last Name</label>
+          <input class="form-control" type="text" name="lastName" [(ngModel)]="user.lastName">
+        </div>
+        <div class="form-group">
+          <label for="">Email</label>
+          <input class="form-control" type="text" name="email" [(ngModel)]="user.email">
+        </div>
+        <div class="form-group">
+          <label for="">Password</label>
+          <input class="form-control" type="text" name="password" [(ngModel)]="user.password">
+        </div>
 
-      <button type="submit" [disabled]="userForm.invalid" class="btn btn-primary w-100 mt-3 mb-3">
-        Create a new Examsheet
-      </button>
-    </form>
+        <button type="submit" [disabled]="userForm.invalid" class="btn btn-primary w-100 mt-3 mb-3">
+          Create a new User
+        </button>
+      </form>
+    </div>
   </div>
 </div>

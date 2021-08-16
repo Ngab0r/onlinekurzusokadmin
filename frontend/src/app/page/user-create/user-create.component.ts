@@ -23,7 +23,11 @@ export class UserCreateComponent implements OnInit {
 
   onSave(ngForm: NgForm): void {
     this.userService.create(ngForm.value).subscribe(
-      user => this.router.navigate(['/', 'users']),
+      user => {
+        this.router.navigate(['/', 'users']);
+        this.userService.update({ _id: user._id, password: user.password })
+          .subscribe(resp => console.log(resp));
+      },
       err => console.error(err)
     );
   }

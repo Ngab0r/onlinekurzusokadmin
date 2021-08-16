@@ -33,6 +33,7 @@ export class UserEditComponent implements OnInit {
     this.user$.subscribe(
       user => {
         this.user = user;
+        this.user.password = '';
         this.setForm();
         this.showForm = true;
       }
@@ -48,10 +49,22 @@ export class UserEditComponent implements OnInit {
   */
     this.fields = [
       new InputField({ key: '_id', label: '', type: 'hidden', value: this.user._id }),
-      // new InputField({
-      // key: 'name', label: 'Name', type: 'text', value: this.user.firstName,
-      // validators: [Validators.required, Validators.minLength(5), Validators.pattern(/^[A-Ű]{1}.*$/)], errorMessage: 'Name is required.'
-      // }),
+      new InputField({
+        key: 'firstName', label: 'First Name', type: 'text', value: this.user.firstName || '',
+        validators: [Validators.required, Validators.minLength(5), Validators.pattern(/^[A-Ű]{1}.*$/)], errorMessage: 'Name is required.'
+      }),
+      new InputField({
+        key: 'lastName', label: 'Last Name', type: 'text', value: this.user.lastName || '',
+        validators: [Validators.required, Validators.minLength(5), Validators.pattern(/^[A-Ű]{1}.*$/)], errorMessage: 'Name is required.'
+      }),
+      new InputField({
+        key: 'email', label: 'Email', type: 'text', value: this.user.email || '',
+        validators: [Validators.required, Validators.minLength(5), Validators.pattern(/^[A-Ű]{1}.*$/)], errorMessage: 'Name is required.'
+      }),
+      new InputField({
+        key: 'password', label: 'Password', type: 'text', value: this.user.password || '',
+        validators: [Validators.required, Validators.minLength(5), Validators.pattern(/^[A-Ű]{1}.*$/)], errorMessage: 'Name is required.'
+      }),
       // new TextareaField({ key: 'questions', label: 'Questions.', value: this.user.questions }),
       // new InputField({ key: 'price', label: 'Price', type: 'number', value: (this.user.price as unknown as string) }),
     ];
