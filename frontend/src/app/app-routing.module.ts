@@ -79,7 +79,7 @@ const routes: Routes = [
     component: HelpComponent,
   },
   {
-    path: 'login',
+    path: 'loginpage',
     component: LoginComponent,
   },
   {
